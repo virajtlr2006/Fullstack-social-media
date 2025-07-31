@@ -1,14 +1,28 @@
 import { useState } from "react"
+import axios from "axios"
+
 
 const SignUp = () => {
+  // Defined all states
   const [username, setusername] = useState("")
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
-  const onSubmit = async () => {
-    console.log(username);
-    console.log(email);
-    console.log(password);
 
+// Button submit function
+  const onSubmit = async () => {
+    try {
+      // Try to add user in db
+        const a = await axios.post("http://localhost:8080/auth/signup",{
+        "email":email,
+        "username":username,
+        "password":password
+    })//Send data to backend
+          alert("Signed Up Successfully")
+
+    } catch (error) {//If failed alert shown
+      alert("Signed Up failed")
+    }
+    console.log(a)
   }
   return (
     <div>
@@ -19,7 +33,6 @@ const SignUp = () => {
         <input type="password" placeholder="password" 
         onChange={(e) => setpassword(e.target.value)}/>
         <button type="Submit" onClick={onSubmit}>Sign Up</button>
-
     </div>
   )
 }

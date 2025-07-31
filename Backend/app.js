@@ -1,7 +1,10 @@
 const express = require("express")
 const authRoute = require("./routes/AuthRoute.js")
 const mongoConnect = require ("./Config/dbconnect.js")
+const cors =require("cors")
 const app = express()
+app.use(cors())
+
 app.use(express.json())
 
 app.listen(8080, async () => {
