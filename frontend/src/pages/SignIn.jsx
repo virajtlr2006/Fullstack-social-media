@@ -14,7 +14,7 @@ const SignIn = () => {
             "email":email,
             "password":password
         })
-        
+        console.log(SignInAPI.data.message)
         if (SignInAPI.data.message == "Signined") {
             localStorage.setItem("email",email)
             navigate("/",{
