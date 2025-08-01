@@ -18,7 +18,6 @@ router.post("/signin",async (req,res) => {
         "message":"Invalid Password"
     })
     }
-    console.log(UserIn)
 })
 router.post("/signup",async (req,res) => {
     const {email,username,password} = req.body
