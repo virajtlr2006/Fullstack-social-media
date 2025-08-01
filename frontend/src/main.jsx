@@ -6,15 +6,18 @@ import App from './App.jsx'
 import SignUp from './pages/SignUp.jsx';
 import SignIn from './pages/SignIn.jsx';
 import Profile from './pages/Profile.jsx';
+import NewPost from './pages/NewPost.jsx';
+import AllPost from './pages/AllPost.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<AllPost />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/post/new" element={<NewPost />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
