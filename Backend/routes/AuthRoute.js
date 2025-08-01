@@ -32,6 +32,15 @@ router.post("/signup",async (req,res) => {
     })
 })
 
+router.post("/profile/",async (req,res) => {
+    const {email} = req.body
+    const profile = await User.find({
+        "email":email
+    })
+    res.json({
+        "profile":profile
+    })
+})
 
 
 module.exports = router
