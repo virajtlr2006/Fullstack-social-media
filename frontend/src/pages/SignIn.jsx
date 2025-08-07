@@ -15,15 +15,15 @@ const SignIn = () => {
             "password":password
         })
         console.log(SignInAPI.data.message)
-        if (SignInAPI.data.message == "Signined") {
-            localStorage.setItem("email",email)
-            navigate("/",{
-                replace:true
-            })
+          if (SignInAPI.data.message == "Signined") {
+              localStorage.setItem("email",email)
+              navigate("/",{
+                  replace:true
+              })
 
-        } else {
-            alert("Invalid password")
-        }
+          } else {
+              alert("Invalid password")
+          }
     }
   return (
     <div>

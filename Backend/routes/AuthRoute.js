@@ -42,5 +42,19 @@ router.post("/profile/",async (req,res) => {
     })
 })
 
-
+router.post("/profile/update",async (req,res) => {
+    const {email,bio,username,password,profilepic} = req.body
+    const UpdatedProfile = await User.findOneAndUpdate({
+        "email":email
+    },{
+        "username":username,
+        "bio":bio,
+        "password":password,
+        "profilepic":profilepic
+    })
+    res.json({
+        "message":"Profile Updated Successfully"
+    })
+    
+})
 module.exports = router

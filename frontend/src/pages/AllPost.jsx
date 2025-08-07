@@ -17,7 +17,7 @@ const AllPost = () => {
                 Posts.map((post, index) =>
                 (
                     <div>
-                        <img src={post.img} alt="post Image" />\
+                        <img src={post.img} alt="post Image" />
                         <br />
                         <Heart/>
                         <p key={index}>{post.caption}</p>

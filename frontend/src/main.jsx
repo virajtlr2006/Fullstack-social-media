@@ -8,6 +8,7 @@ import SignIn from './pages/SignIn.jsx';
 import Profile from './pages/Profile.jsx';
 import NewPost from './pages/NewPost.jsx';
 import AllPost from './pages/AllPost.jsx';
+import EditProfile from './pages/EditProfile.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/signin" element={<SignIn />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/post/new" element={<NewPost />} />
+        <Route path="/profile/edit" element={<EditProfile />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
